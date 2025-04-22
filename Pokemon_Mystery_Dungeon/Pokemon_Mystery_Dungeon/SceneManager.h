@@ -2,17 +2,17 @@
 #include "Singleton.h"
 #include "config.h"
 
-class Scene;
+class GameObject;
 class SceneManager : public Singleton<SceneManager>
 {
 private:
-	map<string, Scene*> mapScenes;
-	map<string, Scene*> mapLoadingScenes;
+	map<string, GameObject*> mapScenes;
+	map<string, GameObject*> mapLoadingScenes;
 
 public:
-	static Scene* currentScene;
-	static Scene* loadingScene;
-	static Scene* nextScene;
+	static GameObject* currentScene;
+	static GameObject* loadingScene;
+	static GameObject* nextScene;
 
 	void Init();
 	void Release();
@@ -22,7 +22,7 @@ public:
 	HRESULT ChangeScene(string key);
 	HRESULT ChangeScene(string key, string loadingKey);
 
-	Scene* AddScene(string key, Scene* scene);
-	Scene* AddLoadingScene(string key, Scene* scene);
+	GameObject* AddScene(string key, GameObject* scene);
+	GameObject* AddLoadingScene(string key, GameObject* scene);
 };
 

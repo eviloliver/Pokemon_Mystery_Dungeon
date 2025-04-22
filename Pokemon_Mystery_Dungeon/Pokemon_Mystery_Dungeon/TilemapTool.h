@@ -1,5 +1,5 @@
 #pragma once
-#include "Scene.h"
+#include "GameObject.h"
 
 
 typedef struct tagTile
@@ -11,7 +11,7 @@ typedef struct tagTile
 
 class Image;
 class Button;
-class TilemapTool : public Scene
+class TilemapTool : public GameObject
 {
 private:
 	Image* sampleTile;

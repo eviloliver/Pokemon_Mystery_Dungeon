@@ -1,24 +1,19 @@
 #pragma once
-#include "Scene.h"
-
-class ImageGDIPlus;
-
-class StartScene : public Scene
+#include "GameObject.h"
+class StartScene : public GameObject
 {
 public:
 
-	virtual HRESULT Init() override;		
-	virtual void Release()override;		
-	virtual void Update()override;
-	virtual void Render(HDC hdc)override;
+	virtual HRESULT Init();		
+	virtual void Release();		
+	virtual void Update();		
+	virtual void Render(HDC hdc);
 
 	StartScene();
 	virtual ~StartScene();
 
 private:
-	ImageGDIPlus* intro;
-	std::vector<ImageGDIPlus*> introFrames;
-	int currFrameIndex;
-	float elapsedTime;
+	Image* backGround;
+
 };
 
